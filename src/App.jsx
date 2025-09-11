@@ -192,20 +192,23 @@ export default function App() {
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
           {[
-            "APRAD",
-            "Fundación Valore",
-            "Priority Safety Perú",
-            "CETPAR",
-            "KALLARI",
-            "Otra alianza",
-          ].map((note, i) => (
-            <div
-              key={i}
-              className="aspect-[3/1] rounded-xl border grid place-content-center bg-white"
-            >
-              <span className="text-slate-400 text-xs">{note} (logo)</span>
-            </div>
-          ))}
+  { alt: "APRAD", src: "/alianzas/aprad.png" },
+  { alt: "Fundación Valore", src: "/alianzas/valore.jpg" },
+  { alt: "Priority Safety Perú", src: "/alianzas/priority.jpg" },
+  { alt: "CETPAR", src: "/alianzas/cetpar.jpg" },
+  { alt: "Kallari", src: "/alianzas/kallari.png" },
+].map((logo, i) => (
+  <div
+    key={i}
+    className="aspect-[3/1] rounded-xl border grid place-content-center bg-white p-2"
+  >
+    <img
+      src={logo.src}
+      alt={logo.alt}
+      className="max-h-12 object-contain"
+    />
+  </div>
+))}
         </div>
       </Section>
     </div>
