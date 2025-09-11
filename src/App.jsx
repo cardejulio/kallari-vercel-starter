@@ -106,7 +106,7 @@ export default function App() {
       </Card>
       <Card>
         <h4 className="font-semibold">Podcast y videos</h4>
-        <p className="mt-2 text-sm text-slate-600">
+               <p className="mt-2 text-sm text-slate-600">
           Historias de comunidad y episodios de seguridad escolar.
         </p>
       </Card>
@@ -125,15 +125,15 @@ export default function App() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-50 via-white to-sky-50" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-[1fr_320px] gap-10 items-center">
           <div>
-<div className="flex items-center gap-3">
-  <img 
-    src="/kallari-logo.png" 
-    alt="Kallari logo" 
-    className="h-16 w-auto object-contain" 
+<div className="flex items-center gap-4">
+  <img
+    src="/kallari-logo.png"
+    alt="Kallari logo"
+    className="h-32 w-auto object-contain flex-shrink-0"
   />
-  <div>
+  <div className="leading-tight">
     <p className="font-semibold text-lg">KALLARI • Asociación Civil</p>
-    <p className="text-xs text-slate-500">Fundación Valore • Perú</p>
+    <p className="text-xs text-slate-500">Perú</p>
   </div>
 </div>
             <h1 className="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
@@ -469,15 +469,17 @@ export default function App() {
       {/* Top bar */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-600 text-white font-bold">
-              K
-            </span>
-            <div className="leading-tight">
-              <p className="font-semibold">KALLARI</p>
-              <p className="text-xs text-slate-500">Asociación Civil • Perú</p>
-            </div>
-          </div>
+<div className="flex items-center gap-3">
+  <img
+    src="/kallari-logo.png"
+    alt="Kallari logo"
+    className="h-10 w-auto object-contain flex-shrink-0"
+  />
+  <div className="leading-tight">
+    <p className="font-semibold">KALLARI</p>
+    <p className="text-xs text-slate-500">Asociación Civil • Perú</p>
+  </div>
+</div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#inicio" className="hover:text-emerald-700">
