@@ -15,7 +15,7 @@ function useHashRoute() {
   return [hash, (h) => { if (typeof window !== "undefined") window.location.hash = h; }];
 }
 
-/* ————— componentes UI reusables ————— */
+/* ————— UI reusables ————— */
 const Section = ({ title, subtitle, children, right }) => (
   <section className="py-14 lg:py-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_320px] gap-10 items-start">
@@ -70,7 +70,7 @@ const Menu = ({ label, items }) => {
   );
 };
 
-export default function App() {
+export default function KallariSite() {
   const [route] = useHashRoute();
 
   /* ————— Sidebar: ACTUALIDAD ————— */
@@ -106,7 +106,7 @@ export default function App() {
       </Card>
       <Card>
         <h4 className="font-semibold">Podcast y videos</h4>
-               <p className="mt-2 text-sm text-slate-600">
+        <p className="mt-2 text-sm text-slate-600">
           Historias de comunidad y episodios de seguridad escolar.
         </p>
       </Card>
@@ -117,76 +117,52 @@ export default function App() {
     </div>
   );
 
-  /* ————— INICIO ————— */
+  /* ————— INICIO (Home) con nueva portada ————— */
   const Home = (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-50 via-white to-sky-50" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-[1fr_320px] gap-10 items-center">
-          <div>
-<div className="flex items-center gap-4">
-  <img
-    src="/kallari-logo.png"
-    alt="Kallari logo"
-    className="h-32 w-auto object-contain flex-shrink-0"
-  />
-  <div className="leading-tight">
-    <p className="font-semibold text-lg">KALLARI • Asociación Civil</p>
-    <p className="text-xs text-slate-500">Perú</p>
-  </div>
-</div>
-            <h1 className="mt-6 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
-              Comunidades que prosperan con educación, salud y resiliencia
-            </h1>
-            <p className="mt-4 text-lg text-slate-600">
-              Intervenimos en Arequipa y La Libertad con programas 360°:
-              escuelas seguras, salud bucal para adultos mayores, discapacidad e
-              inclusión, resiliencia climática y desarrollo económico local.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#proyectos"
-                className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700"
-              >
-                Ver proyectos
-              </a>
-              <a
-                href="#involucrate"
-                className="rounded-xl px-5 py-3 border font-semibold hover:bg-slate-50"
-              >
-                Involúcrate
-              </a>
-              <a
-                href="#dona"
-                className="rounded-xl px-5 py-3 border font-semibold hover:bg-slate-50"
-              >
-                Dona
-              </a>
-            </div>
-            <dl className="mt-10 grid grid-cols-3 gap-6">
-              {[
-                { k: "+10", v: "años de trabajo" },
-                { k: "5k+", v: "beneficiarios/año" },
-                { k: "15", v: "instituciones aliadas" },
-              ].map((item) => (
-                <div
-                  key={item.k}
-                  className="rounded-2xl border p-4 bg-white shadow-sm"
-                >
-                  <dt className="text-2xl font-bold text-emerald-700">
-                    {item.k}
-                  </dt>
-                  <dd className="text-sm text-slate-500">{item.v}</dd>
-                </div>
-              ))}
-            </dl>
+      {/* Hero con imagen de fondo */}
+      <section
+        id="inicio-hero"
+        className="relative h-[600px] flex items-center justify-center text-center text-white"
+        style={{ backgroundImage: "url('/portada.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        {/* Overlay oscuro para contraste */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Texto encima */}
+        <div className="relative z-10 max-w-3xl px-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Comunidades que prosperan con educación, salud y resiliencia
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl text-gray-200">
+            Intervenimos en Arequipa y La Libertad con programas 360°: escuelas seguras,
+            salud bucal para adultos mayores, discapacidad e inclusión, resiliencia climática
+            y desarrollo económico local.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+            <a
+              href="#proyectos"
+              className="rounded-xl px-6 py-3 bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700"
+            >
+              Ver proyectos
+            </a>
+            <a
+              href="#involucrate"
+              className="rounded-xl px-6 py-3 border border-white text-white font-semibold hover:bg-white/10"
+            >
+              Involúcrate
+            </a>
+            <a
+              href="#dona"
+              className="rounded-xl px-6 py-3 border border-white text-white font-semibold hover:bg-white/10"
+            >
+              Dona
+            </a>
           </div>
-          {Actualidad}
         </div>
       </section>
 
-      {/* Alianzas (logos como placeholders, luego reemplazamos por imágenes reales) */}
+      {/* Alianzas (con tus logos) */}
       <Section
         title="Alianzas"
         subtitle="Trabajamos en red con instituciones públicas, privadas y comunitarias."
@@ -194,23 +170,23 @@ export default function App() {
       >
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
           {[
-  { alt: "APRAD", src: "/alianzas/aprad.png" },
-  { alt: "Fundación Valore", src: "/alianzas/valore.jpg" },
-  { alt: "Priority Safety Perú", src: "/alianzas/priority.jpg" },
-  { alt: "CETPAR", src: "/alianzas/cetpar.jpg" },
-  { alt: "Kallari", src: "/alianzas/kallari.png" },
-].map((logo, i) => (
-  <div
-    key={i}
-    className="aspect-[3/1] rounded-xl border grid place-content-center bg-white p-2"
-  >
-    <img
-      src={logo.src}
-      alt={logo.alt}
-      className="max-h-12 object-contain"
-    />
-  </div>
-))}
+            { alt: "APRAD", src: "/alianzas/aprad.png" },
+            { alt: "Fundación Valore", src: "/alianzas/valore.jpg" },
+            { alt: "Priority Safety Perú", src: "/alianzas/priority.jpg" },
+            { alt: "CETPAR", src: "/alianzas/cetpar.jpg" },
+            { alt: "Kallari", src: "/alianzas/kallari.png" },
+          ].map((logo, i) => (
+            <div
+              key={i}
+              className="aspect-[3/1] rounded-xl border grid place-content-center bg-white p-2"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-12 object-contain"
+              />
+            </div>
+          ))}
         </div>
       </Section>
     </div>
@@ -341,7 +317,10 @@ export default function App() {
             Reportes trimestrales de ejecución y resultados, indicadores clave e
             hitos por programa.
           </p>
-          <a className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline" href="#">
+          <a
+            className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline"
+            href="#"
+          >
             Ver reportes →
           </a>
         </Card>
@@ -350,7 +329,10 @@ export default function App() {
           <p className="mt-2 text-sm text-slate-600">
             Síntesis de impacto, aprendizajes y proyección.
           </p>
-          <a className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline" href="#">
+          <a
+            className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline"
+            href="#"
+          >
             Descargar PDF →
           </a>
         </Card>
@@ -365,7 +347,10 @@ export default function App() {
           <p className="mt-2 text-sm text-slate-600">
             Mecanismo confidencial para alertar incumplimientos éticos o de seguridad.
           </p>
-          <a className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline" href="#">
+          <a
+            className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline"
+            href="#"
+          >
             Completar formulario →
           </a>
         </Card>
@@ -389,7 +374,10 @@ export default function App() {
           <Card key={x.t}>
             <h4 className="font-semibold">{x.t}</h4>
             <p className="mt-2 text-sm text-slate-600">{x.d}</p>
-            <a className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline" href="#contactos">
+            <a
+              className="mt-3 inline-block text-sm font-semibold text-emerald-700 hover:underline"
+              href="#contactos"
+            >
               Contactar →
             </a>
           </Card>
@@ -428,9 +416,7 @@ export default function App() {
             <input className="rounded-xl border px-4 py-3" placeholder="Nombre completo" />
             <input className="rounded-xl border px-4 py-3" placeholder="Correo electrónico" />
             <textarea className="rounded-xl border px-4 py-3 min-h-[120px]" placeholder="Cuéntanos sobre tu propuesta" />
-            <button type="button" className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700">
-              Enviar
-            </button>
+            <button type="button" className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700">Enviar</button>
             <p className="text-xs text-slate-500">
               También disponible por WhatsApp y correo institucional (placeholders).
             </p>
@@ -466,25 +452,23 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-800">
-      {/* Top bar */}
+      {/* Header fijo con logo */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-<div className="flex items-center gap-3">
-  <img
-    src="/kallari-logo.png"
-    alt="Kallari logo"
-    className="h-10 w-auto object-contain flex-shrink-0"
-  />
-  <div className="leading-tight">
-    <p className="font-semibold">KALLARI</p>
-    <p className="text-xs text-slate-500">Asociación Civil • Perú</p>
-  </div>
-</div>
+          <div className="flex items-center gap-3">
+            <img
+              src="/kallari-logo.png"
+              alt="Kallari logo"
+              className="h-10 w-auto object-contain flex-shrink-0"
+            />
+            <div className="leading-tight">
+              <p className="font-semibold">KALLARI</p>
+              <p className="text-xs text-slate-500">Asociación Civil • Perú</p>
+            </div>
+          </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#inicio" className="hover:text-emerald-700">
-              Inicio
-            </a>
+            <a href="#inicio" className="hover:text-emerald-700">Inicio</a>
             <Menu
               label="Sobre nosotros"
               items={[
@@ -525,12 +509,8 @@ export default function App() {
                 { title: "¿Tienes un proyecto?", hash: "involucrate" },
               ]}
             />
-            <a href="#dona" className="hover:text-emerald-700">
-              Dona
-            </a>
-            <a href="#contactos" className="hover:text-emerald-700">
-              Contactos
-            </a>
+            <a href="#dona" className="hover:text-emerald-700">Dona</a>
+            <a href="#contactos" className="hover:text-emerald-700">Contactos</a>
           </nav>
 
           <div className="flex items-center gap-2">
