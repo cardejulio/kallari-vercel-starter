@@ -412,15 +412,41 @@ export default function KallariSite() {
     <Section title="Contactos" subtitle="Estamos atentos a nuevas alianzas" right={Actualidad}>
       <div className="grid lg:grid-cols-2 gap-6">
         <Card>
-          <form className="grid grid-cols-1 gap-4">
-            <input className="rounded-xl border px-4 py-3" placeholder="Nombre completo" />
-            <input className="rounded-xl border px-4 py-3" placeholder="Correo electrónico" />
-            <textarea className="rounded-xl border px-4 py-3 min-h-[120px]" placeholder="Cuéntanos sobre tu propuesta" />
-            <button type="button" className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700">Enviar</button>
-            <p className="text-xs text-slate-500">
-              También disponible por WhatsApp y correo institucional (placeholders).
-            </p>
-          </form>
+<form
+  action="https://formspree.io/f/xandkdol"
+  method="POST"
+  className="grid grid-cols-1 gap-4"
+>
+  <input
+    className="rounded-xl border px-4 py-3"
+    type="text"
+    name="nombre"
+    placeholder="Nombre completo"
+    required
+  />
+  <input
+    className="rounded-xl border px-4 py-3"
+    type="email"
+    name="email"
+    placeholder="Correo electrónico"
+    required
+  />
+  <textarea
+    className="rounded-xl border px-4 py-3 min-h-[120px]"
+    name="mensaje"
+    placeholder="Cuéntanos sobre tu propuesta"
+    required
+  />
+  <button
+    type="submit"
+    className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
+  >
+    Enviar
+  </button>
+  <p className="text-xs text-slate-500">
+    También disponible por WhatsApp y correo institucional.
+  </p>
+</form>
         </Card>
         <Card>
           <h4 className="font-semibold">Sedes y ámbito</h4>
