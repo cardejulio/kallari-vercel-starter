@@ -205,7 +205,7 @@ const SobreNosotros = {
       />
     </div>
   </Section>
-};
+}>
       right={Actualidad}
     >
       <div className="space-y-8">
