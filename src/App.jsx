@@ -207,7 +207,7 @@ const SobreNosotros = {
   </Section>
 }>
       right={Actualidad}
-    >
+    &gt;
       <div className="space-y-8">
         <Card>
           <h3 className="font-semibold">Quiénes somos</h3>
