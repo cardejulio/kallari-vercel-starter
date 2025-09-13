@@ -195,8 +195,17 @@ export default function KallariSite() {
   /* ————— SOBRE NOSOTROS ————— */
   const SobreNosotros = (
     <Section
-      title="Sobre nosotros"
-      subtitle="Quiénes somos, misión, valores y equipo"
+const SobreNosotros = (
+  <Section title="" subtitle="" right={Actualidad}>
+    <div className="space-y-8">
+      <img 
+        src="/sobre-nosotros.png" 
+        alt="Sobre Nosotros Kallari" 
+        className="w-full rounded-2xl shadow-lg"
+      />
+    </div>
+  </Section>
+);
       right={Actualidad}
     >
       <div className="space-y-8">
