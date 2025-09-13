@@ -195,7 +195,7 @@ export default function KallariSite() {
   /* ————— SOBRE NOSOTROS ————— */
   const SobreNosotros = (
     <Section
-const SobreNosotros = (
+const SobreNosotros = {
   <Section title="" subtitle="" right={Actualidad}>
     <div className="space-y-8">
       <img 
