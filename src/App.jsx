@@ -276,14 +276,53 @@ export default function KallariSite() {
 </div>
         </Card>
         <div className="grid md:grid-cols-3 gap-6">
-          <Card>
-            <h4 className="font-semibold">Misión y valores</h4>
-            <ul className="mt-2 text-sm list-disc pl-5 space-y-1 text-slate-600">
-              <li>Promover bienestar y oportunidades para todas las personas.</li>
-              <li>Trabajo colaborativo con instituciones locales.</li>
-              <li>Transparencia, respeto e igualdad.</li>
-            </ul>
-          </Card>
+<Card>
+  <h4 className="font-semibold">Misión y valores</h4>
+  <div className="mt-2 text-sm text-slate-600 space-y-3">
+    <p>
+      En <strong>Kallari — Asociación Civil</strong>, trabajamos por el empoderamiento de las comunidades
+      indígenas andinas y amazónicas, fortaleciendo la educación segura, la salud integral, la equidad
+      de género, el desarrollo económico sostenible y la resiliencia climática.
+    </p>
+    <p>
+      Nuestros valores se expresan en principios que guían cada acción:
+    </p>
+    <ul className="list-disc list-inside ml-4 space-y-2">
+      <li>
+        <strong>Equidad e Inclusión Social:</strong> respeto a la dignidad de todas las personas,
+        sin discriminación y con igualdad de oportunidades.
+      </li>
+      <li>
+        <strong>Empoderamiento y Liderazgo Comunitario:</strong> protagonismo de mujeres, jóvenes
+        y pueblos originarios en el desarrollo social y económico.
+      </li>
+      <li>
+        <strong>Solidaridad y Diversidad:</strong> valoración de la riqueza cultural y ambiental de
+        los Andes y la Amazonía.
+      </li>
+      <li>
+        <strong>Desarrollo Sostenible:</strong> proyectos con impacto positivo que preservan el
+        ambiente y fomentan la seguridad alimentaria.
+      </li>
+      <li>
+        <strong>Seguridad y Salud 360°:</strong> creación de entornos educativos y comunitarios
+        libres de bullying y hostigamiento sexual, promoviendo el bienestar integral.
+      </li>
+      <li>
+        <strong>Resiliencia y Gestión del Riesgo:</strong> fortalecimiento de la capacidad local
+        para anticipar, prevenir y responder a desastres naturales.
+      </li>
+      <li>
+        <strong>Innovación, IA Responsable y Geoconservación:</strong> uso ético de la inteligencia
+        artificial, la ciencia y las geociencias para proteger ecosistemas y patrimonio natural.
+      </li>
+      <li>
+        <strong>Transparencia y Responsabilidad Social:</strong> compromiso con la ética, la rendición
+        de cuentas y la confianza de nuestras comunidades y aliados.
+      </li>
+    </ul>
+  </div>
+</Card>
           <Card>
             <h4 className="font-semibold">Nuestros objetivos</h4>
             <ul className="mt-2 text-sm list-disc pl-5 space-y-1 text-slate-600">
