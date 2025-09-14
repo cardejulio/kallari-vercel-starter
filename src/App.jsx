@@ -216,10 +216,16 @@ export default function KallariSite() {
         <Card>
           <h3 className="font-semibold">Quiénes somos</h3>
           <p className="mt-2 text-sm text-slate-600">
-            Somos una asociación civil sin fines de lucro que impulsa proyectos
-            de impacto social en educación, salud, discapacidad, equidad de
-            género y resiliencia climática con enfoque territorial (Arequipa y
-            La Libertad).
+En Kallari — Asociación Civil, somos una organización sin fines de lucro comprometida con el desarrollo integral y sostenible de las comunidades del Perú, con énfasis en las regiones de Arequipa y La Libertad. Nuestro propósito es construir entornos más justos, seguros y resilientes a través de programas que integran educación, salud, inclusión social, equidad de género, prevención de riesgos y desarrollo económico local.
+Creemos que el cambio duradero solo es posible si se trabaja desde un enfoque 360°, involucrando a estudiantes, docentes, familias, instituciones públicas, organizaciones privadas y a la comunidad en general. Por eso, nuestros proyectos están diseñados para fortalecer capacidades locales, fomentar la participación activa y garantizar la sostenibilidad a largo plazo.
+Nuestros ejes de acción:
+•	Educación segura y de calidad: En Alianza con la Fundación Valore, instituciones públicas y privadas, implementamos el Sistema de Gestión en Seguridad y Salud en el Trabajo (Ley 29783) en instituciones educativas, promoviendo una Cultura de Prevención 360° que implica no solo la seguridad y salud en la comunidad educativa, también la lucha contra el bullyng y el hostigamiento sexual y laboral a través de patrullas escolares, formación docente y entornos de aprendizaje inclusivos.
+•	Salud y bienestar comunitario: desarrollamos el programa “Salud Oral 60+”, que brinda atención odontológica integral, prevención y prótesis dentales para adultos mayores en situación de vulnerabilidad.
+•	Inclusión y discapacidad: En convenio con Asociación Peruana de Rehabilitación y Asistencia a las personas con Discapacidad APRAD, impulsamos el Centro de Desarrollo Inclusivo, con talleres de capacitación productiva en joyería, panadería, carpintería, metalmecánica y otras áreas, para promover la autonomía y la empleabilidad de personas con discapacidad.
+•	Equidad de género y prevención de la violencia: trabajamos con escuelas, familias y comunidades para integrar un enfoque de género, prevenir el acoso escolar y laboral, y generar espacios de respeto e igualdad de oportunidades.
+•	Resiliencia climática y gestión de riesgos: implementamos sistemas comunitarios de alerta temprana, capacitación en gestión de riesgos, gestión inteligente del agua y adaptación al cambio climático, especialmente en el Geoparque Colca y Volcanes de Andagua (UNESCO).
+•	Empoderamiento y emprendimiento local: fortalecemos cadenas de valor con identidad territorial, promoviendo el turismo responsable a través del Geoturismo y desarrollando la marca “Geoproducto Solidario” como fuente de ingresos para mujeres y jóvenes emprendedores.
+•	Amazonía para el Futuro: apoyamos la educación ambiental, la vigilancia comunitaria, el desarrollo económico sostenible y sobre todo el empoderamiento y liderazgo de jóvenes y mujeres en zonas de alta biodiversidad.
           </p>
         </Card>
         <div className="grid md:grid-cols-3 gap-6">
