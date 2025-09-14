@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
-/* ————— util: router por hash (#ruta) ————— */
+// Util: simple hash router
 function useHashRoute() {
-  const [hash, setHash] = useState(() =>
-    (typeof window !== "undefined" && window.location.hash.replace("#", "")) ||
-    "inicio"
+  const [hash, setHash] = useState(
+    () =>
+      (typeof window !== "undefined" &&
+        window.location.hash.replace("#", "")) ||
+      "inicio"
   );
   useEffect(() => {
     const onHash = () =>
@@ -12,17 +14,28 @@ function useHashRoute() {
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
-  return [hash, (h) => { if (typeof window !== "undefined") window.location.hash = h; }];
+  return [
+    hash,
+    (h) => {
+      if (typeof window !== "undefined") window.location.hash = h;
+    },
+  ];
 }
 
-/* ————— UI reusables ————— */
+// Reusable UI bits
 const Section = ({ title, subtitle, children, right }) => (
   <section className="py-14 lg:py-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_320px] gap-10 items-start">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900">{title}</h2>
-        {subtitle && <p className="mt-2 text-slate-600">{subtitle}</p>}
-        <div className="mt-8">{children}</div>
+        {title ? (
+          <>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+              {title}
+            </h2>
+            {subtitle && <p className="mt-2 text-slate-600">{subtitle}</p>}
+          </>
+        ) : null}
+        <div className={title ? "mt-8" : ""}>{children}</div>
       </div>
       <aside className="lg:sticky lg:top-20 space-y-4">{right}</aside>
     </div>
@@ -41,7 +54,7 @@ const Pill = ({ children }) => (
   </span>
 );
 
-/* ————— menú desplegable ————— */
+// Dropdown
 const Menu = ({ label, items }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -73,7 +86,7 @@ const Menu = ({ label, items }) => {
 export default function KallariSite() {
   const [route] = useHashRoute();
 
-  /* ————— Sidebar: ACTUALIDAD ————— */
+  // ACTUALIDAD sidebar
   const Actualidad = (
     <div className="space-y-4">
       <Card>
@@ -112,32 +125,33 @@ export default function KallariSite() {
       </Card>
       <Card>
         <h4 className="font-semibold">Revista</h4>
-        <p className="mt-2 text-sm">Próxima edición: “Escuela Segura 360°”.</p>
+        <p className="mt-2 text-sm">Próxima edición: "Escuela Segura 360°"</p>
       </Card>
     </div>
   );
 
-  /* ————— INICIO (Home) con nueva portada ————— */
+  // HOME
   const Home = (
     <div>
-      {/* Hero con imagen de fondo */}
+      {/* Hero con imagen de portada (portada.png) */}
       <section
         id="inicio-hero"
         className="relative h-[600px] flex items-center justify-center text-center text-white"
-        style={{ backgroundImage: "url('/portada.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{
+          backgroundImage: "url('/portada.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        {/* Overlay oscuro para contraste */}
         <div className="absolute inset-0 bg-black/40" />
-
-        {/* Texto encima */}
         <div className="relative z-10 max-w-3xl px-4">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
             Comunidades que prosperan con educación, salud y resiliencia
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-gray-200">
-            Intervenimos en Arequipa y La Libertad con programas 360°: escuelas seguras,
-            salud bucal para adultos mayores, discapacidad e inclusión, resiliencia climática
-            y desarrollo económico local.
+            Intervenimos en Arequipa y La Libertad con programas 360°: escuelas
+            seguras, salud bucal para adultos mayores, discapacidad e inclusión,
+            resiliencia climática y desarrollo económico local.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
@@ -162,7 +176,7 @@ export default function KallariSite() {
         </div>
       </section>
 
-      {/* Alianzas (con tus logos) */}
+      {/* Aliados */}
       <Section
         title="Alianzas"
         subtitle="Trabajamos en red con instituciones públicas, privadas y comunitarias."
@@ -175,16 +189,12 @@ export default function KallariSite() {
             { alt: "Priority Safety Perú", src: "/alianzas/priority.jpg" },
             { alt: "CETPAR", src: "/alianzas/cetpar.jpg" },
             { alt: "Kallari", src: "/alianzas/kallari.png" },
-          ].map((logo, i) => (
+          ].map((l, i) => (
             <div
               key={i}
               className="aspect-[3/1] rounded-xl border grid place-content-center bg-white p-2"
             >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-12 object-contain"
-              />
+              <img src={l.src} alt={l.alt} className="max-h-12 object-contain" />
             </div>
           ))}
         </div>
@@ -192,21 +202,17 @@ export default function KallariSite() {
     </div>
   );
 
-  /* ————— SOBRE NOSOTROS ————— */
-const SobreNosotros = (
-  <Section title="" subtitle="" right={Actualidad}>
-    <div className="space-y-8">
-      <img
-        src="/sobre-nosotros.png"
-        alt="Sobre Nosotros Kallari"
-        className="w-full rounded-2xl shadow-lg"
-      />
-      {/* Si quieres, aquí puedes añadir el texto de Quiénes somos como tarjeta */}
-      {/* <Card><p className="text-sm text-slate-600">…</p></Card> */}
-    </div>
-  </Section>
-);
+  // SOBRE NOSOTROS (título reemplazado por imagen, contenido original intacto)
+  const SobreNosotros = (
+    <Section title="" subtitle="" right={Actualidad}>
       <div className="space-y-8">
+        {/* Aquí va la imagen que reemplaza el título */}
+        <img
+          src="/sobre-nosotros.png"
+          alt="Sobre Nosotros — Kallari"
+          className="w-full rounded-2xl shadow-lg"
+        />
+
         <Card>
           <h3 className="font-semibold">Quiénes somos</h3>
           <p className="mt-2 text-sm text-slate-600">
@@ -229,7 +235,7 @@ const SobreNosotros = (
             <h4 className="font-semibold">Nuestros objetivos</h4>
             <ul className="mt-2 text-sm list-disc pl-5 space-y-1 text-slate-600">
               <li>Escuelas con SG-SST y cultura de prevención 360°.</li>
-              <li>Salud bucal a adultos mayores vulnerables.</li>
+              <li>Atención de salud bucal a adultos mayores vulnerables.</li>
               <li>Inclusión y empleabilidad de personas con discapacidad.</li>
             </ul>
           </Card>
@@ -252,7 +258,7 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— PROYECTOS ————— */
+  // PROYECTOS
   const Proyectos = (
     <Section
       title="Proyectos"
@@ -310,7 +316,7 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— TRANSPARENCIA ————— */
+  // TRANSPARENCIA
   const Transparencia = (
     <Section
       title="Transparencia"
@@ -365,7 +371,7 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— INVOLÚCRATE ————— */
+  // INVOLÚCRATE
   const Involucrate = (
     <Section
       title="Involúcrate"
@@ -374,7 +380,10 @@ const SobreNosotros = (
     >
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { t: "Voluntariado", d: "Participa en campañas, formación y operaciones de campo." },
+          {
+            t: "Voluntariado",
+            d: "Participa en campañas, formación y operaciones de campo.",
+          },
           { t: "Padrinazgo", d: "Apoya equipamiento, prótesis y materiales educativos." },
           { t: "¿Tienes un proyecto?", d: "Propón alianzas y pilotos en tu comunidad." },
         ].map((x) => (
@@ -393,7 +402,7 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— DONA ————— */
+  // DONA
   const Dona = (
     <Section title="Dona" subtitle="Transparencia y trazabilidad de aportes" right={Actualidad}>
       <Card>
@@ -403,10 +412,16 @@ const SobreNosotros = (
           <li>• Recibos y beneficios tributarios (si aplica)</li>
         </ul>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a className="rounded-xl bg-emerald-600 text-white font-semibold px-5 py-3 shadow hover:bg-emerald-700" href="#contactos">
+          <a
+            className="rounded-xl bg-emerald-600 text-white font-semibold px-5 py-3 shadow hover:bg-emerald-700"
+            href="#contactos"
+          >
             Quiero donar
           </a>
-          <a className="rounded-xl border font-semibold px-5 py-3 hover:bg-slate-50" href="#transparencia">
+          <a
+            className="rounded-xl border font-semibold px-5 py-3 hover:bg-slate-50"
+            href="#transparencia"
+          >
             Ver transparencia
           </a>
         </div>
@@ -414,46 +429,46 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— CONTACTOS ————— */
+  // CONTACTOS (con Formspree)
   const Contactos = (
     <Section title="Contactos" subtitle="Estamos atentos a nuevas alianzas" right={Actualidad}>
       <div className="grid lg:grid-cols-2 gap-6">
         <Card>
-<form
-  action="https://formspree.io/f/xandkdol"
-  method="POST"
-  className="grid grid-cols-1 gap-4"
->
-  <input
-    className="rounded-xl border px-4 py-3"
-    type="text"
-    name="nombre"
-    placeholder="Nombre completo"
-    required
-  />
-  <input
-    className="rounded-xl border px-4 py-3"
-    type="email"
-    name="email"
-    placeholder="Correo electrónico"
-    required
-  />
-  <textarea
-    className="rounded-xl border px-4 py-3 min-h-[120px]"
-    name="mensaje"
-    placeholder="Cuéntanos sobre tu propuesta"
-    required
-  />
-  <button
-    type="submit"
-    className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
-  >
-    Enviar
-  </button>
-  <p className="text-xs text-slate-500">
-    También disponible por WhatsApp y correo institucional.
-  </p>
-</form>
+          <form
+            action="https://formspree.io/f/xandkdol"
+            method="POST"
+            className="grid grid-cols-1 gap-4"
+          >
+            <input
+              className="rounded-xl border px-4 py-3"
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              required
+            />
+            <input
+              className="rounded-xl border px-4 py-3"
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <textarea
+              className="rounded-xl border px-4 py-3 min-h-[120px]"
+              name="mensaje"
+              placeholder="Cuéntanos sobre tu propuesta"
+              required
+            />
+            <button
+              type="submit"
+              className="rounded-xl px-5 py-3 bg-emerald-600 text-white font-semibold hover:bg-emerald-700"
+            >
+              Enviar
+            </button>
+            <p className="text-xs text-slate-500">
+              También disponible por WhatsApp y correo institucional.
+            </p>
+          </form>
         </Card>
         <Card>
           <h4 className="font-semibold">Sedes y ámbito</h4>
@@ -472,7 +487,7 @@ const SobreNosotros = (
     </Section>
   );
 
-  /* ————— Router ————— */
+  // route map
   const routes = {
     inicio: Home,
     "sobre-nosotros": SobreNosotros,
@@ -485,7 +500,7 @@ const SobreNosotros = (
 
   return (
     <div className="min-h-screen bg-white text-slate-800">
-      {/* Header fijo con logo */}
+      {/* Top bar */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -501,7 +516,9 @@ const SobreNosotros = (
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#inicio" className="hover:text-emerald-700">Inicio</a>
+            <a href="#inicio" className="hover:text-emerald-700">
+              Inicio
+            </a>
             <Menu
               label="Sobre nosotros"
               items={[
@@ -542,8 +559,12 @@ const SobreNosotros = (
                 { title: "¿Tienes un proyecto?", hash: "involucrate" },
               ]}
             />
-            <a href="#dona" className="hover:text-emerald-700">Dona</a>
-            <a href="#contactos" className="hover:text-emerald-700">Contactos</a>
+            <a href="#dona" className="hover:text-emerald-700">
+              Dona
+            </a>
+            <a href="#contactos" className="hover:text-emerald-700">
+              Contactos
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -557,7 +578,7 @@ const SobreNosotros = (
         </div>
       </header>
 
-      {/* Contenido según ruta */}
+      {/* Content */}
       {routes[route] || Home}
 
       {/* Footer */}
