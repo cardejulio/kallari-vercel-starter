@@ -193,21 +193,19 @@ export default function KallariSite() {
   );
 
   /* ————— SOBRE NOSOTROS ————— */
-  const SobreNosotros = (
-    <Section
-const SobreNosotros = {
+const SobreNosotros = (
   <Section title="" subtitle="" right={Actualidad}>
     <div className="space-y-8">
-      <img 
-        src="/sobre-nosotros.png" 
-        alt="Sobre Nosotros Kallari" 
+      <img
+        src="/sobre-nosotros.png"
+        alt="Sobre Nosotros Kallari"
         className="w-full rounded-2xl shadow-lg"
       />
+      {/* Si quieres, aquí puedes añadir el texto de Quiénes somos como tarjeta */}
+      {/* <Card><p className="text-sm text-slate-600">…</p></Card> */}
     </div>
   </Section>
-}>
-      right={Actualidad}
-    &gt;
+);
       <div className="space-y-8">
         <Card>
           <h3 className="font-semibold">Quiénes somos</h3>
