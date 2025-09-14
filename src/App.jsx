@@ -215,18 +215,65 @@ export default function KallariSite() {
 
         <Card>
           <h3 className="font-semibold">Quiénes somos</h3>
-          <p className="mt-2 text-sm text-slate-600">
-En Kallari — Asociación Civil, somos una organización sin fines de lucro comprometida con el desarrollo integral y sostenible de las comunidades del Perú, con énfasis en las regiones de Arequipa y La Libertad. Nuestro propósito es construir entornos más justos, seguros y resilientes a través de programas que integran educación, salud, inclusión social, equidad de género, prevención de riesgos y desarrollo económico local.
-Creemos que el cambio duradero solo es posible si se trabaja desde un enfoque 360°, involucrando a estudiantes, docentes, familias, instituciones públicas, organizaciones privadas y a la comunidad en general. Por eso, nuestros proyectos están diseñados para fortalecer capacidades locales, fomentar la participación activa y garantizar la sostenibilidad a largo plazo.
-Nuestros ejes de acción:
-•	Educación segura y de calidad: En Alianza con la Fundación Valore, instituciones públicas y privadas, implementamos el Sistema de Gestión en Seguridad y Salud en el Trabajo (Ley 29783) en instituciones educativas, promoviendo una Cultura de Prevención 360° que implica no solo la seguridad y salud en la comunidad educativa, también la lucha contra el bullyng y el hostigamiento sexual y laboral a través de patrullas escolares, formación docente y entornos de aprendizaje inclusivos.
-•	Salud y bienestar comunitario: desarrollamos el programa “Salud Oral 60+”, que brinda atención odontológica integral, prevención y prótesis dentales para adultos mayores en situación de vulnerabilidad.
-•	Inclusión y discapacidad: En convenio con Asociación Peruana de Rehabilitación y Asistencia a las personas con Discapacidad APRAD, impulsamos el Centro de Desarrollo Inclusivo, con talleres de capacitación productiva en joyería, panadería, carpintería, metalmecánica y otras áreas, para promover la autonomía y la empleabilidad de personas con discapacidad.
-•	Equidad de género y prevención de la violencia: trabajamos con escuelas, familias y comunidades para integrar un enfoque de género, prevenir el acoso escolar y laboral, y generar espacios de respeto e igualdad de oportunidades.
-•	Resiliencia climática y gestión de riesgos: implementamos sistemas comunitarios de alerta temprana, capacitación en gestión de riesgos, gestión inteligente del agua y adaptación al cambio climático, especialmente en el Geoparque Colca y Volcanes de Andagua (UNESCO).
-•	Empoderamiento y emprendimiento local: fortalecemos cadenas de valor con identidad territorial, promoviendo el turismo responsable a través del Geoturismo y desarrollando la marca “Geoproducto Solidario” como fuente de ingresos para mujeres y jóvenes emprendedores.
-•	Amazonía para el Futuro: apoyamos la educación ambiental, la vigilancia comunitaria, el desarrollo económico sostenible y sobre todo el empoderamiento y liderazgo de jóvenes y mujeres en zonas de alta biodiversidad.
-          </p>
+<div className="mt-2 text-sm text-slate-600 space-y-4">
+  <p>
+    En <strong>Kallari — Asociación Civil</strong>, somos una organización sin fines de lucro
+    comprometida con el desarrollo integral y sostenible de las comunidades del Perú, con énfasis
+    en las regiones de <strong>Arequipa</strong> y <strong>La Libertad</strong>. Nuestro propósito es
+    construir entornos más justos, seguros y resilientes a través de programas que integran
+    educación, salud, inclusión social, equidad de género, prevención de riesgos y desarrollo
+    económico local.
+  </p>
+
+  <p>
+    Creemos que el cambio duradero solo es posible si se trabaja desde un <strong>enfoque 360°</strong>,
+    involucrando a estudiantes, docentes, familias, instituciones públicas, organizaciones privadas
+    y a la comunidad en general. Por eso, nuestros proyectos están diseñados para fortalecer
+    capacidades locales, fomentar la participación activa y garantizar la sostenibilidad a largo plazo.
+  </p>
+
+  <p><strong>Nuestros ejes de acción:</strong></p>
+  <ul className="list-disc list-inside ml-4 space-y-2">
+    <li>
+      <strong>Educación segura y de calidad:</strong> En alianza con la Fundación Valore,
+      instituciones públicas y privadas, implementamos el Sistema de Gestión en Seguridad y
+      Salud en el Trabajo (Ley 29783), promoviendo una <strong>Cultura de Prevención 360°</strong>
+      contra el bullying y el hostigamiento, con patrullas escolares, formación docente y entornos
+      inclusivos.
+    </li>
+    <li>
+      <strong>Salud y bienestar comunitario:</strong> Desarrollamos el programa
+      <em> “Salud Oral 60+”</em>, con atención odontológica integral, prevención y prótesis dentales
+      para adultos mayores vulnerables.
+    </li>
+    <li>
+      <strong>Inclusión y discapacidad:</strong> En convenio con <strong>APRAD</strong>, impulsamos el
+      Centro de Desarrollo Inclusivo con talleres de joyería, panadería, carpintería,
+      metalmecánica y más, promoviendo autonomía y empleabilidad.
+    </li>
+    <li>
+      <strong>Equidad de género y prevención de la violencia:</strong> Trabajamos con escuelas y
+      comunidades para integrar un enfoque de género, prevenir el acoso escolar y laboral, y
+      generar espacios de respeto e igualdad de oportunidades.
+    </li>
+    <li>
+      <strong>Resiliencia climática y gestión de riesgos:</strong> Implementamos sistemas de alerta
+      temprana, capacitación en gestión de riesgos, gestión inteligente del agua y adaptación al
+      cambio climático, especialmente en el <strong>Geoparque Colca y Volcanes de Andagua</strong>
+      (UNESCO).
+    </li>
+    <li>
+      <strong>Empoderamiento y emprendimiento local:</strong> Fortalecemos cadenas de valor con
+      identidad territorial, promoviendo <strong>Geoturismo</strong> y la marca
+      <em> “Geoproducto Solidario”</em> como fuente de ingresos para mujeres y jóvenes emprendedores.
+    </li>
+    <li>
+      <strong>Amazonía para el Futuro:</strong> Apoyamos la educación ambiental, la vigilancia
+      comunitaria, el desarrollo económico sostenible y el liderazgo de jóvenes y mujeres en zonas
+      de alta biodiversidad.
+    </li>
+  </ul>
+</div>
         </Card>
         <div className="grid md:grid-cols-3 gap-6">
           <Card>
