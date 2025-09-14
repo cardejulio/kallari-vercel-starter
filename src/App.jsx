@@ -323,14 +323,54 @@ export default function KallariSite() {
     </ul>
   </div>
 </Card>
-          <Card>
-            <h4 className="font-semibold">Nuestros objetivos</h4>
-            <ul className="mt-2 text-sm list-disc pl-5 space-y-1 text-slate-600">
-              <li>Escuelas con SG-SST y cultura de prevención 360°.</li>
-              <li>Atención de salud bucal a adultos mayores vulnerables.</li>
-              <li>Inclusión y empleabilidad de personas con discapacidad.</li>
-            </ul>
-          </Card>
+<Card>
+  <h4 className="font-semibold">Nuestros objetivos</h4>
+  <ul className="mt-2 text-sm list-disc pl-5 space-y-2 text-slate-600">
+    <li>
+      <strong>Fortalecer la educación integral y segura:</strong> implementar el modelo de
+      <em> Seguridad y Salud 360°</em> en centros educativos, promoviendo la prevención del bullying,
+      el hostigamiento sexual y una cultura de bienestar y prevención de riesgos.
+    </li>
+    <li>
+      <strong>Garantizar la salud integral comunitaria:</strong> desarrollar programas de salud bucal,
+      prevención y bienestar psicosocial, con énfasis en adultos mayores y poblaciones vulnerables.
+    </li>
+    <li>
+      <strong>Promover la inclusión social y la empleabilidad:</strong> implementar centros y talleres
+      productivos para personas con discapacidad, jóvenes y mujeres, orientados a la formación técnica
+      y el emprendimiento sostenible.
+    </li>
+    <li>
+      <strong>Impulsar la equidad de género y la prevención de la violencia:</strong> fortalecer el
+      liderazgo de mujeres y jóvenes, creando comunidades libres de discriminación y desigualdad.
+    </li>
+    <li>
+      <strong>Fomentar la resiliencia climática y la gestión del riesgo de desastres:</strong> diseñar
+      e implementar sistemas comunitarios de alerta temprana y protocolos de acción anticipatoria,
+      integrando ciencia, tecnología y saberes locales.
+    </li>
+    <li>
+      <strong>Impulsar el desarrollo económico local sostenible:</strong> promover cadenas de valor
+      inclusivas con identidad territorial (artesanía, geoproductos solidarios, geoturismo), fortaleciendo
+      la autonomía económica de mujeres y jóvenes.
+    </li>
+    <li>
+      <strong>Proteger el patrimonio natural, cultural y geológico:</strong> integrar las geociencias
+      y la geoconservación en proyectos educativos y comunitarios como motores de identidad y
+      oportunidades económicas.
+    </li>
+    <li>
+      <strong>Incorporar la innovación tecnológica y el uso responsable de la IA:</strong> desarrollar
+      soluciones digitales que mejoren la prevención de riesgos, la gestión educativa, la salud y el
+      monitoreo ambiental, asegurando un uso ético de la inteligencia artificial.
+    </li>
+    <li>
+      <strong>Asegurar la sostenibilidad, transparencia y participación social:</strong> gestionar
+      proyectos con eficiencia, ética y rendición de cuentas, fomentando la corresponsabilidad de
+      actores locales, regionales e internacionales.
+    </li>
+  </ul>
+</Card>
           <Card>
             <h4 className="font-semibold">Nuestro equipo</h4>
             <p className="mt-2 text-sm text-slate-600">
